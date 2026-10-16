@@ -1,0 +1,88 @@
+# api call for lead create
+###
+POST http://127.0.0.1:8000/lead
+Content-Type: application/json
+Authorization: Basic admin:admin@123
+
+{
+    "name":"manu",
+    "phone":9876567395,
+    "email":"manu@gmail.com",
+    "course":"python fullstack",
+    "source":"Referral",
+    "status":"Contacted",
+    "notes":"evening batch prefrered"
+
+    }
+
+# API call for list all leads
+###
+GET http://127.0.0.1:8000/lead
+Authorization: Basic admin:admin@123
+
+# API call for lead detail view
+###
+GET http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic admin:admin@123
+
+# API call for update a lead data
+###
+PUT http://127.0.0.1:8000/lead/detail/1
+Content-Type: application/json
+Authorization: Basic admin:admin@123
+
+{
+  "id": 1,
+  "name": "anu",
+  "phone": "9876543215",
+  "email": "anu@gmail.com",
+  "course": "python fullstack",
+  "source": "Website",
+  "status": "Contacted",
+  "added_date": "2026-10-15T06:03:59.912865Z",
+  "notes": "evening batch prefered" 
+}
+
+# API call for delete a lead data
+###
+DELETE http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic admin:admin@123
+
+
+# API call for status level lead list
+###
+GET http://127.0.0.1:8000/lead/status
+Authorization: Basic admin:admin@123
+
+# API call for ordering leads based on name
+###
+GET http://127.0.0.1:8000/lead?ordering=name
+Authorization: Basic admin:admin@123
+
+# API call for ordering leads based on added data in ascending
+###
+GET  http://127.0.0.1:8000/lead?ordering=added_date
+Authorization: Basic admin:admin@123
+
+
+# API call for ordering leads based on added data in descending order
+###
+GET  http://127.0.0.1:8000/lead?ordering=-added_date
+Authorization: Basic admin:admin@123
+
+
+# APi call for filter leads based on status
+###
+GET  http://127.0.0.1:8000/lead?search=New
+Authorization: Basic admin:admin@123
+
+
+# APi call for filter leads based on status
+###
+GET  http://127.0.0.1:8000/lead?search=Contacted
+Authorization: Basic admin:admin@123
+
+# API call for filter leads based on status
+###
+GET  http://127.0.0.1:8000/lead?status=Contacted&source=Referral
+Authorization: basic admin:admin@123
